@@ -11,6 +11,8 @@ class GALAGA_USFX_LAB02_API ANaveEnemiga : public AActor
 {
 	GENERATED_BODY()
 	
+public:
+	float ahahhaha;
 public:	
 	// Sets default values for this actor's properties
 	ANaveEnemiga();
