@@ -55,4 +55,10 @@ private:
 private:
 	int DireccionMovimientoVertical;
 
+protected:
+	float Radio = 700.0f;
+	float Angulo = 0.0f;
+	float Speed = 20.0F;
+
+
 };

@@ -5,6 +5,10 @@
 #include "NaveEnemiga.h"
 #include "NaveEnemigaCaza.h"
 #include "NaveEnemigaTransporte.h"
+#include "NaveEnemigaEspia.h"
+#include "NaveEnemigaHacker.h"
+
+
 
 AGalaga_USFX_LAB02GameMode::AGalaga_USFX_LAB02GameMode()
 {
@@ -16,7 +20,7 @@ void AGalaga_USFX_LAB02GameMode::BeginPlay()
 {
     Super::BeginPlay();
 
-    FVector ubicacionInicialNaves = FVector(1052.0f, -1452.0f, 214.0f);
+    FVector ubicacionInicialNaves = FVector(500.0f, 500.0f, 200.0f);
     FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
 
     UWorld* const World = GetWorld();
@@ -32,13 +36,29 @@ void AGalaga_USFX_LAB02GameMode::BeginPlay()
         }
 
         // Resetear ubicación para Naves Enemigas de tipo Transporte
-        ubicacionActual.X = ubicacionInicialNaves.X - 300.0f;
+        ubicacionActual.X = ubicacionInicialNaves.X - 350.0f;
 
         // Spawn de Naves Enemigas de tipo Transporte
         for (int j = 0; j < 5; j++) {
             ubicacionActual.Y = ubicacionInicialNaves.Y + 300.0f * (float)j;
             ANaveEnemigaTransporte* NaveEnemigaTransporteActual = World->SpawnActor<ANaveEnemigaTransporte>(ubicacionActual, rotacionNave);
             TANavesEnemigasTransporte.Add(NaveEnemigaTransporteActual);
+        }
+        // Spawn de Naves Enemigas de tipo Espia
+        ubicacionActual.X = ubicacionInicialNaves.X - 700.0f;
+        for (int j = 0; j < 5; j++) {
+
+            ubicacionActual.Y = ubicacionInicialNaves.Y + 300.0f * j;
+            ANaveEnemigaEspia* NaveEnemigaEspiaActual = World->SpawnActor<ANaveEnemigaEspia>(ubicacionActual, rotacionNave);
+            TANavesEnemigasEspia.Add(NaveEnemigaEspiaActual);
+        }
+        // Spawn de Naves Enemigas de tipo Hacker
+        ubicacionActual.X = ubicacionInicialNaves.X - 1050.0f;
+        for (int j = 0; j < 5; j++) {
+
+            ubicacionActual.Y = ubicacionInicialNaves.Y + 300.0f * j;
+            ANaveEnemigaHacker* NaveEnemigaHackerActual = World->SpawnActor<ANaveEnemigaHacker>(ubicacionActual, rotacionNave);
+            TANavesEnemigasHacker.Add(NaveEnemigaHackerActual);
         }
     }
 }

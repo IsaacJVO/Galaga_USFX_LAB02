@@ -17,6 +17,11 @@ ANaveEnemiga::ANaveEnemiga()
 	//mallaNaveEnemiga->SetStaticMesh(malla.Object);
 	mallaNaveEnemiga->SetupAttachment(RootComponent);
 	RootComponent = mallaNaveEnemiga;
+	//// Inicializa el componente de movimiento de naves
+	MovimientoNavesComponent = CreateDefaultSubobject<UAComponenteMovimiento>(TEXT("MovimientoNavesComponente"));
+
+	//// Establece el componente de movimiento como tickeable
+	MovimientoNavesComponent->PrimaryComponentTick.bCanEverTick = true;
 
 }
 
@@ -31,4 +36,15 @@ void ANaveEnemiga::BeginPlay()
 void ANaveEnemiga::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	////Angulo += Speed * DeltaTime;
+
+	////// Calcula las nuevas posiciones en x y y
+	//float NuevaX = GetActorLocation().X + Radio * FMath::Cos(Angulo) * DeltaTime;
+	//float NuevaY = GetActorLocation().Y + Radio * FMath::Sin(Angulo) * DeltaTime;
+
+	////// Establece la nueva posición
+	//FVector NewLocation = FVector(NuevaX, NuevaY, GetActorLocation().Z);
+	//SetActorLocation(NewLocation);
+
+	MovimientoNavesComponent->TickComponent(DeltaTime, ELevelTick::LEVELTICK_TimeOnly, nullptr);
 }

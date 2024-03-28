@@ -8,8 +8,6 @@ ANaveEnemigaTransporte::ANaveEnemigaTransporte()
 
 	PrimaryActorTick.bCanEverTick = true;
 
-	VelocidadMovimiento = 100.0f; 
-
 	DireccionMovimientoVertical = -1;
 }
 
@@ -21,9 +19,10 @@ void ANaveEnemigaTransporte::BeginPlay()
 void ANaveEnemigaTransporte::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
+    Mover(DeltaTime);
 
     // Definir la velocidad de movimiento vertical
-    float VelocidadVertical = 700.0f; // Puedes ajustar esta velocidad según sea necesario
+    float VelocidadVertical = 300.0f; // Puedes ajustar esta velocidad según sea necesario
 
     // Calcular el desplazamiento vertical para este fotograma
     float DesplazamientoVertical = VelocidadVertical * DeltaTime;
@@ -68,12 +67,11 @@ void ANaveEnemigaTransporte::Tick(float DeltaTime)
 
 void ANaveEnemigaTransporte::Mover(float DeltaTime)
 {
-	FVector PosicionActual = GetActorLocation();
+    Angulo += Speed * DeltaTime;
+    float NuevaX = GetActorLocation().X + Radio * FMath::Cos(Angulo) * DeltaTime;
+    float NuevaY = GetActorLocation().Y + Radio * FMath::Sin(Angulo) * DeltaTime;
 
-	float NuevaX = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime;
-	float NuevaY = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime;
+    FVector NewLocation = FVector(NuevaX, NuevaY, GetActorLocation().Z);
+    SetActorLocation(NewLocation);
 
-	FVector NuevaPosicion = FVector(PosicionActual.X + NuevaX, PosicionActual.Y + NuevaY, PosicionActual.Z);
-
-	SetActorLocation(NuevaPosicion);
 }

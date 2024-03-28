@@ -9,12 +9,17 @@
 class ANaveEnemiga;
 class ANaveEnemigaCaza;
 class ANaveEnemigaTransporte;
+class ANaveEnemigaEspia;
+class ANaveEnemigaHacker;
 
 
 UCLASS(MinimalAPI)
 class AGalaga_USFX_LAB02GameMode : public AGameModeBase
 {
 	GENERATED_BODY()
+
+
+
 
 
 public:
@@ -36,5 +41,7 @@ public:
 	TArray<ANaveEnemiga*> TANavesEnemigas;
 	TArray<ANaveEnemigaCaza*> TANavesEnemigasCaza;
 	TArray<ANaveEnemigaTransporte*> TANavesEnemigasTransporte;
+	TArray<ANaveEnemigaEspia*> TANavesEnemigasEspia;
+	TArray<ANaveEnemigaHacker*> TANavesEnemigasHacker;
 
 };

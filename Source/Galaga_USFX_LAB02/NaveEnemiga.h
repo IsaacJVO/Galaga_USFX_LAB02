@@ -4,7 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "AComponenteMovimiento.h"
 #include "NaveEnemiga.generated.h"
+
 
 UCLASS()
 class GALAGA_USFX_LAB02_API ANaveEnemiga : public AActor
@@ -27,6 +29,8 @@ protected:
 	float tiempoDisparo;
 	FVector posicion;
 	float vida;
+
+	UAComponenteMovimiento* MovimientoNavesComponent;
 	//CATrayectoria* trayectoria;g
 public:
 	// Metodos accesores
