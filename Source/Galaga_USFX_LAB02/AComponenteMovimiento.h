@@ -16,7 +16,7 @@ public:
 	// Sets default values for this component's properties
 	UAComponenteMovimiento();
 	UPROPERTY()
-	float MovimientoNaves = 4;
+	float MovimientoNaves = 2;
 	float limiteInferiorY = -1600.0f;
 
 

@@ -20,7 +20,7 @@ void AGalaga_USFX_LAB02GameMode::BeginPlay()
 {
     Super::BeginPlay();
 
-    FVector ubicacionInicialNaves = FVector(500.0f, 500.0f, 200.0f);
+    FVector ubicacionInicialNaves = FVector(550.0f, 500.0f, 200.0f);
     FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
 
     UWorld* const World = GetWorld();
@@ -36,7 +36,7 @@ void AGalaga_USFX_LAB02GameMode::BeginPlay()
         }
 
         // Resetear ubicación para Naves Enemigas de tipo Transporte
-        ubicacionActual.X = ubicacionInicialNaves.X - 350.0f;
+        ubicacionActual.X = ubicacionInicialNaves.X - 300.0f;
 
         // Spawn de Naves Enemigas de tipo Transporte
         for (int j = 0; j < 5; j++) {
@@ -45,7 +45,7 @@ void AGalaga_USFX_LAB02GameMode::BeginPlay()
             TANavesEnemigasTransporte.Add(NaveEnemigaTransporteActual);
         }
         // Spawn de Naves Enemigas de tipo Espia
-        ubicacionActual.X = ubicacionInicialNaves.X - 700.0f;
+        ubicacionActual.X = ubicacionInicialNaves.X - 600.0f;
         for (int j = 0; j < 5; j++) {
 
             ubicacionActual.Y = ubicacionInicialNaves.Y + 300.0f * j;
@@ -53,7 +53,7 @@ void AGalaga_USFX_LAB02GameMode::BeginPlay()
             TANavesEnemigasEspia.Add(NaveEnemigaEspiaActual);
         }
         // Spawn de Naves Enemigas de tipo Hacker
-        ubicacionActual.X = ubicacionInicialNaves.X - 1050.0f;
+        ubicacionActual.X = ubicacionInicialNaves.X - 900.0f;
         for (int j = 0; j < 5; j++) {
 
             ubicacionActual.Y = ubicacionInicialNaves.Y + 300.0f * j;

@@ -22,9 +22,7 @@ protected:
 	float puntaje;
 	float tipoLaser;
 	float tiempoCargaSigilo;
-	float Radio = 700.0f; // Radio de la circunferencia
-	float Angulo = 0.0f; // Ángulo inicial
-	float Speed = 20.0f; // Velocidad de rotación
+
 public:
 	FORCEINLINE float GetTiempoSigilo() const { return tiempoSigilo; }
 	FORCEINLINE float GetTiempoInvisible() const { return tiempoInvisible; }
@@ -44,10 +42,6 @@ public:
 
 public:
 	ANaveEnemigaEspia();
-
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
 
 public:
 	virtual void Tick(float DeltaTime) override;

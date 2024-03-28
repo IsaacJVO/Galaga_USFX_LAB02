@@ -40,9 +40,6 @@ public: //Accesory Methods
 public:
 	ANaveEnemigaTransporte();
 
-protected:
-	virtual void BeginPlay() override;
-
 public:
 	virtual void Tick(float DeltaTime) override;
 
@@ -54,11 +51,6 @@ private:
 
 private:
 	int DireccionMovimientoVertical;
-
-protected:
-	float Radio = 700.0f;
-	float Angulo = 0.0f;
-	float Speed = 20.0F;
 
 
 };

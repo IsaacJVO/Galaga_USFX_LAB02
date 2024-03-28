@@ -50,10 +50,6 @@ public:
 public:
 	virtual void Mover(float DeltaTime);
 
-protected:
-	float Radio = 700.0f;
-	float Angulo = 0.0f;
-	float Speed = 20.0F;
 
 private:
 	int DireccionMovimientoVertical;

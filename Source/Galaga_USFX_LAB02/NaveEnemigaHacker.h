@@ -23,17 +23,10 @@ public:
 public:
 	virtual void Mover(float DeltaTime);
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
 private:
 	int DireccionMovimientoVertical;
 private:
 	float VelocidadMovimiento;
-protected:
-	float Radio = 700.0f;
-	float Angulo = 0.0f;
-	float Speed = 20.0F;
+
 
 };
