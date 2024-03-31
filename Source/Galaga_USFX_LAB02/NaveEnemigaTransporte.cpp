@@ -3,7 +3,7 @@
 
 ANaveEnemigaTransporte::ANaveEnemigaTransporte()
 {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_WideCapsule.Shape_WideCapsule'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/TwinStick/Meshes/TwinStickUFO.TwinStickUFO'"));
 	mallaNaveEnemiga->SetStaticMesh(malla.Object);
 
 	PrimaryActorTick.bCanEverTick = true;

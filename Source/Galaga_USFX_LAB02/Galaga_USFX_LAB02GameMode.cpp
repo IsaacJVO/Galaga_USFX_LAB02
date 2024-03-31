@@ -8,56 +8,68 @@
 #include "NaveEnemigaEspia.h"
 #include "NaveEnemigaHacker.h"
 
-
-
+// Constructor del GameMode
 AGalaga_USFX_LAB02GameMode::AGalaga_USFX_LAB02GameMode()
 {
-    // set default pawn class to our character class
+    // Establece la clase predeterminada del Pawn
     DefaultPawnClass = AGalaga_USFX_LAB02Pawn::StaticClass();
 }
 
+// Función que se llama al iniciar el juego
 void AGalaga_USFX_LAB02GameMode::BeginPlay()
 {
     Super::BeginPlay();
 
-    FVector ubicacionInicialNaves = FVector(550.0f, 500.0f, 200.0f);
-    FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
+    // Define la ubicación inicial para spawnear las naves enemigas
+    FVector ubicacionInicialNaves = FVector(900.0f, -1600.0f, 200.0f);
+    FRotator rotacionNave = FRotator(0.0f, 180.0f, 0.0f);
 
+    // Obtiene el mundo del juego
     UWorld* const World = GetWorld();
     if (World != nullptr)
     {
-        FVector ubicacionActual = ubicacionInicialNaves;
-
         // Spawn de Naves Enemigas de tipo Caza
         for (int i = 0; i < 5; i++) {
-            ubicacionActual = FVector(ubicacionInicialNaves.X, ubicacionInicialNaves.Y + 300.0f * (float)i, ubicacionInicialNaves.Z);
+            // Calcula la ubicación actual para esta nave
+            FVector ubicacionActual = FVector(ubicacionInicialNaves.X, ubicacionInicialNaves.Y + 300.0f * (float)i, ubicacionInicialNaves.Z);
+            // Spawnea la nave enemiga de tipo Caza en la ubicación calculada
             ANaveEnemigaCaza* NaveEnemigaCazaActual = World->SpawnActor<ANaveEnemigaCaza>(ubicacionActual, rotacionNave);
+            // Agrega la nave enemiga a un contenedor
             TANavesEnemigasCaza.Add(NaveEnemigaCazaActual);
         }
 
         // Resetear ubicación para Naves Enemigas de tipo Transporte
-        ubicacionActual.X = ubicacionInicialNaves.X - 300.0f;
+        FVector ubicacionActual = FVector(ubicacionInicialNaves.X - 300.0f, ubicacionInicialNaves.Y, ubicacionInicialNaves.Z);
 
         // Spawn de Naves Enemigas de tipo Transporte
         for (int j = 0; j < 5; j++) {
+            // Calcula la ubicación actual para esta nave
             ubicacionActual.Y = ubicacionInicialNaves.Y + 300.0f * (float)j;
+            // Spawnea la nave enemiga de tipo Transporte en la ubicación calculada
             ANaveEnemigaTransporte* NaveEnemigaTransporteActual = World->SpawnActor<ANaveEnemigaTransporte>(ubicacionActual, rotacionNave);
+            // Agrega la nave enemiga a un contenedor
             TANavesEnemigasTransporte.Add(NaveEnemigaTransporteActual);
         }
+
         // Spawn de Naves Enemigas de tipo Espia
         ubicacionActual.X = ubicacionInicialNaves.X - 600.0f;
         for (int j = 0; j < 5; j++) {
-
+            // Calcula la ubicación actual para esta nave
             ubicacionActual.Y = ubicacionInicialNaves.Y + 300.0f * j;
+            // Spawnea la nave enemiga de tipo Espia en la ubicación calculada
             ANaveEnemigaEspia* NaveEnemigaEspiaActual = World->SpawnActor<ANaveEnemigaEspia>(ubicacionActual, rotacionNave);
+            // Agrega la nave enemiga a un contenedor
             TANavesEnemigasEspia.Add(NaveEnemigaEspiaActual);
         }
+
         // Spawn de Naves Enemigas de tipo Hacker
         ubicacionActual.X = ubicacionInicialNaves.X - 900.0f;
         for (int j = 0; j < 5; j++) {
-
+            // Calcula la ubicación actual para esta nave
             ubicacionActual.Y = ubicacionInicialNaves.Y + 300.0f * j;
+            // Spawnea la nave enemiga de tipo Hacker en la ubicación calculada
             ANaveEnemigaHacker* NaveEnemigaHackerActual = World->SpawnActor<ANaveEnemigaHacker>(ubicacionActual, rotacionNave);
+            // Agrega la nave enemiga a un contenedor
             TANavesEnemigasHacker.Add(NaveEnemigaHackerActual);
         }
     }

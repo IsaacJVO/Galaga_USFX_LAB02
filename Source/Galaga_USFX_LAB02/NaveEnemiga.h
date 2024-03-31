@@ -1,17 +1,30 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "AComponenteMovimiento.h"
+#include "ProyectilEnemiga.h" //xd
 #include "NaveEnemiga.generated.h"
-
 
 UCLASS()
 class GALAGA_USFX_LAB02_API ANaveEnemiga : public AActor
 {
 	GENERATED_BODY()
+
+
+
+
+
+
+
+
+
+public:
+	// Agregar una referencia al proyectil que la nave enemiga va a disparar
+	UPROPERTY(EditAnywhere, Category = "Proyectil")
+	TSubclassOf<class AGalaga_USFX_LAB02Projectile> ProyectilClass;
+
+
 
 public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
@@ -26,12 +39,16 @@ protected:
 	float experiencia;
 	float energia;
 	FString nombre;
-	float tiempoDisparo;
 	FVector posicion;
+	float tiempoDisparo;
 	float vida;
 
+	// Posición inicial de la nave enemiga
+	FVector PosicionInicial;
+
+	// Componente de movimiento de las naves
 	UAComponenteMovimiento* MovimientoNavesComponent;
-	//CATrayectoria* trayectoria;g
+
 public:
 	// Metodos accesores
 	FORCEINLINE float GetVelocidad() const { return velocidad; }
@@ -58,7 +75,9 @@ public:
 
 
 
+
 public:
+
 	// Sets default values for this actor's properties
 	ANaveEnemiga();
 
@@ -66,15 +85,15 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:
-	// Called every frame
+protected:
+
 	virtual void Tick(float DeltaTime) override;
 
 protected:
 	void Mover(float DeltaTime) PURE_VIRTUAL(ANaveEnemiga::Mover, );
 
 protected:
-	float Radio = 700.0f; // Radio de la circunferencia
+	float Radio = 500.0f; // Radio de la circunferencia
 	float Angulo = 0.0f; // Ángulo inicial
 	float Speed = 20.0f; // Velocidad de rotación
 };

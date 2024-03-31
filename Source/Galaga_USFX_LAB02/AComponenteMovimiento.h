@@ -16,8 +16,8 @@ public:
 	// Sets default values for this component's properties
 	UAComponenteMovimiento();
 	UPROPERTY()
-	float MovimientoNaves = 2;
-	float limiteInferiorY = -1600.0f;
+	float MovimientoNaves = 4;
+	float limiteInferiorY = 1600.0f;
 
 
 protected:
@@ -27,6 +27,8 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+	int DireccionMovimientoHorizontal = 1;
 
 
 		

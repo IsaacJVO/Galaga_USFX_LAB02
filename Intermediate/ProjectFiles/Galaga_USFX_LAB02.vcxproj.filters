@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Galaga_USFX_LAB02.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{0699D1B7-9C6C-4A83-B6B9-2D00302D2BCE}</UniqueIdentifier>
+      <UniqueIdentifier>{2C9D0292-692E-451B-BB1B-74659D4A8AA0}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Galaga_USFX_LAB02.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{FD65D4E2-5E55-4F67-B555-D3C57D05CD83}</UniqueIdentifier>
+      <UniqueIdentifier>{C07F07B2-582B-48A9-B055-DB2414982044}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Galaga_USFX_LAB02">
-      <UniqueIdentifier>{617A00C6-F900-4A34-959C-3E6BA61205ED}</UniqueIdentifier>
+      <UniqueIdentifier>{ED37D7F5-8698-4A77-AB46-D7C18CEFC46D}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Galaga_USFX_LAB02\AComponenteMovimiento.cpp">
       <Filter>Source\Galaga_USFX_LAB02</Filter>
@@ -67,6 +67,18 @@
     <ClInclude Include="..\..\Source\Galaga_USFX_LAB02\Galaga_USFX_LAB02Projectile.h">
       <Filter>Source\Galaga_USFX_LAB02</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_LAB02\NaveEenmigaMadre.cpp">
+      <Filter>Source\Galaga_USFX_LAB02</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_LAB02\NaveEenmigaMadre.h">
+      <Filter>Source\Galaga_USFX_LAB02</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_LAB02\NaveEenmigaMadreGGis.cpp">
+      <Filter>Source\Galaga_USFX_LAB02</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_LAB02\NaveEenmigaMadreGGis.h">
+      <Filter>Source\Galaga_USFX_LAB02</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX_LAB02\NaveEnemiga.cpp">
       <Filter>Source\Galaga_USFX_LAB02</Filter>
     </ClCompile>
@@ -91,10 +103,28 @@
     <ClInclude Include="..\..\Source\Galaga_USFX_LAB02\NaveEnemigaHacker.h">
       <Filter>Source\Galaga_USFX_LAB02</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_LAB02\NaveEnemigaRalentizadora.cpp">
+      <Filter>Source\Galaga_USFX_LAB02</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_LAB02\NaveEnemigaRalentizadora.h">
+      <Filter>Source\Galaga_USFX_LAB02</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX_LAB02\NaveEnemigaTransporte.cpp">
       <Filter>Source\Galaga_USFX_LAB02</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Galaga_USFX_LAB02\NaveEnemigaTransporte.h">
+      <Filter>Source\Galaga_USFX_LAB02</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_LAB02\NaveEnemigaUwU.cpp">
+      <Filter>Source\Galaga_USFX_LAB02</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_LAB02\NaveEnemigaUwU.h">
+      <Filter>Source\Galaga_USFX_LAB02</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_LAB02\ProyectilEnemiga.cpp">
+      <Filter>Source\Galaga_USFX_LAB02</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_LAB02\ProyectilEnemiga.h">
       <Filter>Source\Galaga_USFX_LAB02</Filter>
     </ClInclude>
   </ItemGroup>

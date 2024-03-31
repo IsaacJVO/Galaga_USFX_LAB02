@@ -3,7 +3,7 @@
 
 ANaveEnemigaCaza::ANaveEnemigaCaza()
 {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/TwinStick/Meshes/TwinStickUFO.TwinStickUFO'"));
 	mallaNaveEnemiga->SetStaticMesh(malla.Object);
 
 	// Set this actor to call Tick() every frame

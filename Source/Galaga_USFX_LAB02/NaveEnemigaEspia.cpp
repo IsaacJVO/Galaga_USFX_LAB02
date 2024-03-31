@@ -4,7 +4,7 @@
 
 ANaveEnemigaEspia::ANaveEnemigaEspia()
 {
-    static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Torus.Shape_Torus'"));
+    static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/TwinStick/Meshes/TwinStickUFO.TwinStickUFO'"));
     mallaNaveEnemiga->SetStaticMesh(malla.Object);
     PrimaryActorTick.bCanEverTick = true;
 

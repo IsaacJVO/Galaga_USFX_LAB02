@@ -5,7 +5,7 @@
 
 ANaveEnemigaHacker::ANaveEnemigaHacker()
 {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Wedge_A.Shape_Wedge_A'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/TwinStick/Meshes/TwinStickUFO.TwinStickUFO'"));
 	mallaNaveEnemiga->SetStaticMesh(malla.Object);
 	nombre = "NaveEnemigaHacker";
 	PrimaryActorTick.bCanEverTick = true;

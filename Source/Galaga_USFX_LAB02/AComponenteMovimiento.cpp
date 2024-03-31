@@ -24,8 +24,63 @@ void UAComponenteMovimiento::BeginPlay()
 }
 
 
-// Called every frame
+//OPCION 1
 void UAComponenteMovimiento::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+{
+    Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
+    AActor* Parent = GetOwner();
+    if (Parent)
+    {
+        // Obtener la posición actual de la nave
+        FVector PosicionActual = Parent->GetActorLocation();
+
+        // Definir los límite DERECHO E IZQUIERDO de movimiento
+        float LimiteDerecho = 1528.0f;
+        float LimiteIzquierdo = -1600.0f;
+
+        // Definir la velocidad de movimiento horizontal
+        float VelocidadHorizontal =150.0f;
+
+        // Calcular el desplazamiento horizontal para este fotograma
+        float DesplazamientoHorizontal = VelocidadHorizontal * DeltaTime;
+
+        // Verificar si la nave está moviéndose hacia derecha o izquierda
+
+        if (DireccionMovimientoHorizontal == 1) // Movimiento hacia derecha
+        {
+            // Mover la nave hacia derecha
+            FVector NuevaPosicion = PosicionActual + FVector(0.0f, DesplazamientoHorizontal, 0.0f);
+            if (NuevaPosicion.Y <= LimiteDerecho)
+            {
+                Parent->SetActorLocation(NuevaPosicion);
+            }
+            else
+            {
+                // Si alcanza el límite superior, cambiar la dirección de movimiento a hacia izquierda
+                DireccionMovimientoHorizontal = -1;
+            }
+        }
+        else // Movimiento hacia izquierda
+        {
+            // Mover la nave hacia izquierda
+            FVector NuevaPosicion = PosicionActual - FVector(0.0f, DesplazamientoHorizontal, 0.0f);
+            if (NuevaPosicion.Y >= LimiteIzquierdo)
+            {
+                Parent->SetActorLocation(NuevaPosicion);
+            }
+            else
+            {
+                // Si alcanza el límite de la izquierda, cambiar la dirección de movimiento a hacia la derecha
+                DireccionMovimientoHorizontal = 1;
+            }
+        }
+    }
+}
+
+//OPCION 2
+
+/*void UAComponenteMovimiento::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
@@ -41,18 +96,18 @@ void UAComponenteMovimiento::TickComponent(float DeltaTime, ELevelTick TickType,
 
 		// Calculate the new position based on the movement speed
 		//Calcula la nueva posicion basada en la velocidad de movimiento(Y hacia la Izquierda)
-		FVector NewLocation = FVector(CurrentLocation.X, CurrentLocation.Y - MovimientoNaves, CurrentLocation.Z);
+		FVector NewLocation = FVector(CurrentLocation.X, CurrentLocation.Y + MovimientoNaves, CurrentLocation.Z);
 		// Muestra  la nueva position
 		Parent->SetActorLocation(NewLocation);
 
 		//Limite del mapa
-		if (NewLocation.Y < limiteInferiorY)//-1600.0f
+		if (NewLocation.Y > limiteInferiorY)// 1600.0f
 		{
-			Parent->SetActorLocation(FVector(CurrentLocation.X, 1600.0f, CurrentLocation.Z));
+			Parent->SetActorLocation(FVector(CurrentLocation.X, -1600.0f, CurrentLocation.Z));
 
 		}
 
 
 	}
-}
+}*/
 

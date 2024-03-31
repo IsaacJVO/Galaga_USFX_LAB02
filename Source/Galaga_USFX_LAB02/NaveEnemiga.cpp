@@ -1,50 +1,46 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "NaveEnemiga.h"
 #include "Components/StaticMeshComponent.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Engine/StaticMesh.h"
+#include "TimerManager.h"
+#include "AComponenteMovimiento.h"
+#include "ProyectilEnemiga.h"
 
-// Sets default values
 ANaveEnemiga::ANaveEnemiga()
 {
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	//static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_NarrowCapsule.Shape_NarrowCapsule'"));
-// Create the mesh component
+
 	mallaNaveEnemiga = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
-	//mallaNaveEnemiga->SetStaticMesh(malla.Object);
 	mallaNaveEnemiga->SetupAttachment(RootComponent);
 	RootComponent = mallaNaveEnemiga;
-	//// Inicializa el componente de movimiento de naves
+
 	MovimientoNavesComponent = CreateDefaultSubobject<UAComponenteMovimiento>(TEXT("MovimientoNavesComponente"));
-
-	//// Establece el componente de movimiento como tickeable
-	MovimientoNavesComponent->PrimaryComponentTick.bCanEverTick = true;
-
 }
 
-// Called when the game starts or when spawned
 void ANaveEnemiga::BeginPlay()
 {
 	Super::BeginPlay();
 
+	// Inicializar la posición inicial
+	PosicionInicial = GetActorLocation();
 }
 
-// Called every frame
 void ANaveEnemiga::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	// Actualizar el ángulo para el movimiento
 	Angulo += Speed * DeltaTime;
 
-	////// Calcula las nuevas posiciones en x y y
+	// Calcular la nueva posición basada en el ángulo y la velocidad
 	float NuevaX = GetActorLocation().X + Radio * FMath::Cos(Angulo) * DeltaTime;
-	float NuevaY = GetActorLocation().Y + Radio * FMath::Sin(Angulo) * DeltaTime;
-
-	////// Establece la nueva posición
-	FVector NewLocation = FVector(NuevaX, NuevaY, GetActorLocation().Z);
+	FVector NewLocation = FVector(NuevaX, GetActorLocation().Y, GetActorLocation().Z);
 	SetActorLocation(NewLocation);
 
+	// Actualizar el tick del componente de movimiento
 	MovimientoNavesComponent->TickComponent(DeltaTime, ELevelTick::LEVELTICK_TimeOnly, nullptr);
 }
+
+
+
+
