@@ -1,13 +1,9 @@
 #include "NaveEnemiga.h"
-#include "Components/StaticMeshComponent.h"
-#include "UObject/ConstructorHelpers.h"
-#include "Engine/StaticMesh.h"
-#include "TimerManager.h"
-#include "AComponenteMovimiento.h"
-#include "ProyectilEnemiga.h"
+
 
 ANaveEnemiga::ANaveEnemiga()
 {
+
 	PrimaryActorTick.bCanEverTick = true;
 
 	mallaNaveEnemiga = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
@@ -15,31 +11,38 @@ ANaveEnemiga::ANaveEnemiga()
 	RootComponent = mallaNaveEnemiga;
 
 	MovimientoNavesComponent = CreateDefaultSubobject<UAComponenteMovimiento>(TEXT("MovimientoNavesComponente"));
+	MovimientoNavesComponent->PrimaryComponentTick.bCanEverTick = true;
+
+
+	//InvisibleComponent = CreateDefaultSubobject<UAComponenteInvisible>(TEXT("InvisibleComponent")); 
+	//InvisibleComponent->PrimaryComponentTick.bCanEverTick = true;
+
 }
 
 void ANaveEnemiga::BeginPlay()
 {
-	Super::BeginPlay();
+	Super::BeginPlay(); // Llamamos a la implementación de BeginPlay de la clase base
 
-	// Inicializar la posición inicial
-	PosicionInicial = GetActorLocation();
+	// No hay acciones adicionales en BeginPlay en este momento
 }
 
 void ANaveEnemiga::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	// Actualizar el ángulo para el movimiento
 	Angulo += Speed * DeltaTime;
-
-	// Calcular la nueva posición basada en el ángulo y la velocidad
+	
+	//// Calcula las nuevas posiciones en x y y
 	float NuevaX = GetActorLocation().X + Radio * FMath::Cos(Angulo) * DeltaTime;
-	FVector NewLocation = FVector(NuevaX, GetActorLocation().Y, GetActorLocation().Z);
+	float NuevaY = GetActorLocation().Y + Radio * FMath::Sin(Angulo) * DeltaTime;
+
+	//// Establece la nueva posición
+	FVector NewLocation = FVector(NuevaX, NuevaY, GetActorLocation().Z);
 	SetActorLocation(NewLocation);
 
-	// Actualizar el tick del componente de movimiento
 	MovimientoNavesComponent->TickComponent(DeltaTime, ELevelTick::LEVELTICK_TimeOnly, nullptr);
 }
+
 
 
 

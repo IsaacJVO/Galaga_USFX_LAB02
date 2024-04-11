@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaRalentizadora() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANaveEnemigaRalentizadora_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "NaveEnemigaRalentizadora.h" },
 		{ "ModuleRelativePath", "NaveEnemigaRalentizadora.h" },
 	};
@@ -72,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaRalentizadora() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANaveEnemigaRalentizadora, 1687185776);
+	IMPLEMENT_CLASS(ANaveEnemigaRalentizadora, 2221092361);
 	template<> GALAGA_USFX_LAB02_API UClass* StaticClass<ANaveEnemigaRalentizadora>()
 	{
 		return ANaveEnemigaRalentizadora::StaticClass();

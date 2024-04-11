@@ -3,32 +3,25 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "AComponenteMovimiento.h"
-#include "ProyectilEnemiga.h" //xd
+#include "ProyectilEnemiga.h"
+#include "AComponenteInvisible.h"
 #include "NaveEnemiga.generated.h"
+
 
 UCLASS()
 class GALAGA_USFX_LAB02_API ANaveEnemiga : public AActor
 {
 	GENERATED_BODY()
 
-
-
-
-
-
-
-
-
-public:
-	// Agregar una referencia al proyectil que la nave enemiga va a disparar
-	UPROPERTY(EditAnywhere, Category = "Proyectil")
-	TSubclassOf<class AGalaga_USFX_LAB02Projectile> ProyectilClass;
-
-
-
 public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
+
+
 	UStaticMeshComponent* mallaNaveEnemiga;
+
+//public:
+
+	//UCAInvisible* InvisibleComponente; // Componente invisible
 
 protected:
 	float velocidad;
@@ -43,11 +36,12 @@ protected:
 	float tiempoDisparo;
 	float vida;
 
-	// Posición inicial de la nave enemiga
-	FVector PosicionInicial;
+	//Componente Invisible
+	UAComponenteInvisible* InvisibleComponent;  
 
 	// Componente de movimiento de las naves
 	UAComponenteMovimiento* MovimientoNavesComponent;
+
 
 public:
 	// Metodos accesores

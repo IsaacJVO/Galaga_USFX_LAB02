@@ -25,8 +25,8 @@ AGalaga_USFX_LAB02Projectile::AGalaga_USFX_LAB02Projectile()
 	// Usar un ProjectileMovementComponent para gobernar el movimiento del proyectil
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovement0"));
 	ProjectileMovement->UpdatedComponent = ProjectileMesh;
-	ProjectileMovement->InitialSpeed = 6000.f;
-	ProjectileMovement->MaxSpeed = 6000.f;
+	ProjectileMovement->InitialSpeed = 9000.f;
+	ProjectileMovement->MaxSpeed = 9000.f;
 	ProjectileMovement->bRotationFollowsVelocity = true;
 	ProjectileMovement->bShouldBounce = false;
 	ProjectileMovement->ProjectileGravityScale = 0.f; // Sin gravedad
@@ -52,10 +52,7 @@ void AGalaga_USFX_LAB02Projectile::OnHit(UPrimitiveComponent* HitComp, AActor* O
 		NaveEnemiga->Destroy();
 	}
 
-	// Si golpea cualquier cosa, también destruye la bala
-	Destroy();
-
-
+	Destroy(); 
 
 	// Solo añadir impulso y destruir el proyectil si golpea algo físico
 	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComp != nullptr) && OtherComp->IsSimulatingPhysics())

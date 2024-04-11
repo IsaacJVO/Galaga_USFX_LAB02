@@ -4,11 +4,10 @@
 
 ANaveEnemigaEspia::ANaveEnemigaEspia()
 {
-    static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/TwinStick/Meshes/TwinStickUFO.TwinStickUFO'"));
+    static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/TwinStick/Meshes/TwinStickUFO_4.TwinStickUFO_4'"));
     mallaNaveEnemiga->SetStaticMesh(malla.Object);
     PrimaryActorTick.bCanEverTick = true;
 
-    DireccionMovimientoVertical = -1;
 
 }
 
