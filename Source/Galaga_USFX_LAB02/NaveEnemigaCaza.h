@@ -46,16 +46,10 @@ public:
 public:
 	virtual void Tick(float DeltaTime) override;
 
+public:
+	virtual void BeginPlay() override;	
 
 public:
 	virtual void Mover(float DeltaTime);
-
-
-private:
-	int DireccionMovimientoVertical;
-
-private:
-	float VelocidadMovimiento;
-
 
 };

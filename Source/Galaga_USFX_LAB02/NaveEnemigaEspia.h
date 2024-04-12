@@ -6,9 +6,7 @@
 #include "NaveEnemiga.h"
 #include "NaveEnemigaEspia.generated.h"
 
-/**
- * 
- */
+
 UCLASS()
 class GALAGA_USFX_LAB02_API ANaveEnemigaEspia : public ANaveEnemiga
 {
@@ -46,13 +44,6 @@ public:
 public:
 	virtual void Tick(float DeltaTime) override;
 	virtual void Mover(float DeltaTime);
-
-private:
-	float VelocidadMovimiento;
-
-private:
-	int DireccionMovimientoVertical;
-
 
 
 };

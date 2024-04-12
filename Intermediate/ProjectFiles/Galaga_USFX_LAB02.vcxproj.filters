@@ -79,12 +79,6 @@
     <ClInclude Include="..\..\Source\Galaga_USFX_LAB02\NaveEenmigaMadre.h">
       <Filter>Source\Galaga_USFX_LAB02</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Galaga_USFX_LAB02\NaveEenmigaMadreGGis.cpp">
-      <Filter>Source\Galaga_USFX_LAB02</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Galaga_USFX_LAB02\NaveEenmigaMadreGGis.h">
-      <Filter>Source\Galaga_USFX_LAB02</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX_LAB02\NaveEnemiga.cpp">
       <Filter>Source\Galaga_USFX_LAB02</Filter>
     </ClCompile>

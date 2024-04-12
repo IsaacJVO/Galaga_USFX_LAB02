@@ -1,4 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -23,8 +22,4 @@ public:
 	virtual void Tick(float DeltaTime) override;
 public:
 	virtual void Mover(float DeltaTime);
-	float Radio = 50.0f; // Radio de la circunferencia
-	float Angulo = 0.0f; // Ángulo inicial
-	float Speed = 20.0f; // Velocidad de rotación
-	
 };

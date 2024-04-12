@@ -1,4 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
 #include "NaveEnemigaTransporte.h"
 
 ANaveEnemigaTransporte::ANaveEnemigaTransporte()
@@ -8,14 +7,14 @@ ANaveEnemigaTransporte::ANaveEnemigaTransporte()
 
 	PrimaryActorTick.bCanEverTick = true;
 
-	DireccionMovimientoVertical = -1;
 }
 void ANaveEnemigaTransporte::Tick(float DeltaTime)
 {
    	Super::Tick(DeltaTime);
-	Mover(DeltaTime);
+
 }
 
 void ANaveEnemigaTransporte::Mover(float DeltaTime)
 {
+	Mover(DeltaTime); 
 }

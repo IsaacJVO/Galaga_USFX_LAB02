@@ -8,10 +8,15 @@
 #include "NaveEnemiga.generated.h"
 
 
+
 UCLASS()
 class GALAGA_USFX_LAB02_API ANaveEnemiga : public AActor
 {
 	GENERATED_BODY()
+
+
+
+
 
 public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
@@ -19,9 +24,6 @@ public:
 
 	UStaticMeshComponent* mallaNaveEnemiga;
 
-//public:
-
-	//UCAInvisible* InvisibleComponente; // Componente invisible
 
 protected:
 	float velocidad;
@@ -72,11 +74,11 @@ public:
 
 public:
 
-	// Sets default values for this actor's properties
+
 	ANaveEnemiga();
 
 protected:
-	// Called when the game starts or when spawned
+
 	virtual void BeginPlay() override;
 
 protected:
@@ -86,8 +88,5 @@ protected:
 protected:
 	void Mover(float DeltaTime) PURE_VIRTUAL(ANaveEnemiga::Mover, );
 
-protected:
-	float Radio = 500.0f; // Radio de la circunferencia
-	float Angulo = 0.0f; // Ángulo inicial
-	float Speed = 20.0f; // Velocidad de rotación
+
 };

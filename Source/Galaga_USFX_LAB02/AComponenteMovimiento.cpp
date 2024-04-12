@@ -6,11 +6,7 @@
 // Sets default values for this component's properties
 UAComponenteMovimiento::UAComponenteMovimiento()
 {
-	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
-	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
-
-	// ...
 }
 
 
@@ -18,8 +14,6 @@ UAComponenteMovimiento::UAComponenteMovimiento()
 void UAComponenteMovimiento::BeginPlay()
 {
 	Super::BeginPlay();
-
-	// ...
 	
 }
 
@@ -32,22 +26,18 @@ void UAComponenteMovimiento::TickComponent(float DeltaTime, ELevelTick TickType,
     AActor* Parent = GetOwner();
     if (Parent)
     {
-        // Obtener la posición actual de la nave
         FVector PosicionActual = Parent->GetActorLocation();
 
-        // Definir los límite DERECHO E IZQUIERDO de movimiento
-        float LimiteDerecho = 1528.0f;
+        float LimiteDerecho = 1600.0f;
         float LimiteIzquierdo = -1600.0f;
 
-        // Definir la velocidad de movimiento horizontal
-        float VelocidadHorizontal =150.0f;
+        float VelocidadHorizontal = 300.0f;
 
-        // Calcular el desplazamiento horizontal para este fotograma
         float DesplazamientoHorizontal = VelocidadHorizontal * DeltaTime;
 
-        // Verificar si la nave está moviéndose hacia derecha o izquierda
+  
 
-        if (DireccionMovimientoHorizontal == 1) // Movimiento hacia derecha
+        if (DireccionMovimientoHorizontal == 1) 
         {
             // Mover la nave hacia derecha
             FVector NuevaPosicion = PosicionActual + FVector(0.0f, DesplazamientoHorizontal, 0.0f);
@@ -57,13 +47,11 @@ void UAComponenteMovimiento::TickComponent(float DeltaTime, ELevelTick TickType,
             }
             else
             {
-                // Si alcanza el límite superior, cambiar la dirección de movimiento a hacia izquierda
                 DireccionMovimientoHorizontal = -1;
             }
         }
-        else // Movimiento hacia izquierda
+        else 
         {
-            // Mover la nave hacia izquierda
             FVector NuevaPosicion = PosicionActual - FVector(0.0f, DesplazamientoHorizontal, 0.0f);
             if (NuevaPosicion.Y >= LimiteIzquierdo)
             {
@@ -71,12 +59,49 @@ void UAComponenteMovimiento::TickComponent(float DeltaTime, ELevelTick TickType,
             }
             else
             {
-                // Si alcanza el límite de la izquierda, cambiar la dirección de movimiento a hacia la derecha
                 DireccionMovimientoHorizontal = 1;
             }
         }
     }
+
+    Angulo += Speed * DeltaTime;
+
+    float NuevaX = GetOwner()->GetActorLocation().X + Radio * FMath::Cos(Angulo) * DeltaTime;
+    float NuevaY = GetOwner()->GetActorLocation().Y + Radio * FMath::Sin(Angulo) * DeltaTime;
+
+    FVector NewLocation = FVector(NuevaX, NuevaY, GetOwner()->GetActorLocation().Z);
+    GetOwner()->SetActorLocation(NewLocation);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //OPCION 2
 

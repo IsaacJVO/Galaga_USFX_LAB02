@@ -1,4 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -44,9 +43,4 @@ private:
 
 private:
 	float VelocidadMovimiento = 250.0f;
-
-protected:
-	float Radio = 500.0f; // Radio de la circunferencia
-	float Angulo = 0.0f; // Ángulo inicial
-	float Speed = 20.0f; // Velocidad de rotación
 };

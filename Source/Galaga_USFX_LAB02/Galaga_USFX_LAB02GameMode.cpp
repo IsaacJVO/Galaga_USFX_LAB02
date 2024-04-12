@@ -1,5 +1,3 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
-
 #include "Galaga_USFX_LAB02GameMode.h"
 #include "Galaga_USFX_LAB02Pawn.h"
 #include "NaveEnemiga.h"
@@ -24,7 +22,7 @@ void AGalaga_USFX_LAB02GameMode::BeginPlay()
     Super::BeginPlay();
 
     // Define la ubicación inicial para spawnear las naves enemigas
-    FVector ubicacionInicialNaves = FVector(1000.0f, -800.0f, 200.0f);
+    FVector ubicacionInicialNaves = FVector(1000.0f, -1600.0f, 200.0f);
     FRotator rotacionNave = FRotator(0.0f, 180.0f, 0.0f);
 
     // Obtiene el mundo del juego

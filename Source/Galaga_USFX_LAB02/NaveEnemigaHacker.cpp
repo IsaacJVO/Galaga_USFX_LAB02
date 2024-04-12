@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 
 #include "NaveEnemigaHacker.h"
 
@@ -14,11 +12,11 @@ ANaveEnemigaHacker::ANaveEnemigaHacker()
 void ANaveEnemigaHacker::Tick(float DeltaTime) 
 {
 	Super::Tick(DeltaTime);
-	Mover(DeltaTime);
+
 }
 
 void ANaveEnemigaHacker::Mover(float DeltaTime)
 {
-
+	Mover(DeltaTime);
 }
 

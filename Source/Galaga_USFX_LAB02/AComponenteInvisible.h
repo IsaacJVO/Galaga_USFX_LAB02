@@ -13,8 +13,7 @@ class GALAGA_USFX_LAB02_API UAComponenteInvisible : public UActorComponent
 	GENERATED_BODY()
 
 public:	
-	// Sets default values for this component's properties
-	
+		
 	UAComponenteInvisible();
 
 	UStaticMeshComponent* Malla;

@@ -14,11 +14,10 @@ ANaveEnemigaEspia::ANaveEnemigaEspia()
 void ANaveEnemigaEspia::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	Mover(DeltaTime);
- 
+	
 }
 
 void ANaveEnemigaEspia::Mover(float DeltaTime)
 {
-	
+	Mover(DeltaTime); 
 }

@@ -1,4 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -6,9 +5,7 @@
 #include "NaveEnemiga.h"
 #include "NaveEnemigaTransporte.generated.h"
 
-/**
- *
- */
+
 UCLASS()
 class GALAGA_USFX_LAB02_API ANaveEnemigaTransporte : public ANaveEnemiga
 {
@@ -16,7 +13,7 @@ class GALAGA_USFX_LAB02_API ANaveEnemigaTransporte : public ANaveEnemiga
 
 private:
 	int capacidadCarga;
-	int estadoCarga;	//indicador si la nave esta completa o vacia
+	int estadoCarga;
 protected:
 	int tiempoDescarga;
 	int tipoDescarga;
@@ -45,12 +42,6 @@ public:
 
 public:
 	virtual void Mover(float DeltaTime);
-
-private:
-	float VelocidadMovimiento;
-
-private:
-	int DireccionMovimientoVertical;
 
 
 };

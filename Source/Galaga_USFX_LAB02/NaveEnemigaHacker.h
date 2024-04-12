@@ -1,4 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -6,9 +5,7 @@
 #include "NaveEnemiga.h"
 #include "NaveEnemigaHacker.generated.h"
 
-/**
- * 
- */
+
 UCLASS()
 class GALAGA_USFX_LAB02_API ANaveEnemigaHacker : public ANaveEnemiga
 {
@@ -23,10 +20,6 @@ public:
 public:
 	virtual void Mover(float DeltaTime);
 
-private:
-	int DireccionMovimientoVertical;
-private:
-	float VelocidadMovimiento;
 
 
 };
