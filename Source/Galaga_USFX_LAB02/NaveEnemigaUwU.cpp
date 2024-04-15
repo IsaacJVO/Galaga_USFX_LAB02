@@ -12,10 +12,8 @@ ANaveEnemigaUwU::ANaveEnemigaUwU()
 void ANaveEnemigaUwU::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 void ANaveEnemigaUwU::Mover(float DeltaTime)
 {
-	Mover(DeltaTime);
 }

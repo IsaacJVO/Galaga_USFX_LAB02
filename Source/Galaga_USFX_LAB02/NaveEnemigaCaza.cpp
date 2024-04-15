@@ -12,12 +12,6 @@ ANaveEnemigaCaza::ANaveEnemigaCaza()
 void ANaveEnemigaCaza::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-	
-}
-
-void ANaveEnemigaCaza::BeginPlay()
-{
 }
 
 void ANaveEnemigaCaza::Mover(float DeltaTime)

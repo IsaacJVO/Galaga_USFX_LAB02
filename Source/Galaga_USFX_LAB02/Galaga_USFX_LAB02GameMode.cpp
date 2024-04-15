@@ -22,14 +22,14 @@ void AGalaga_USFX_LAB02GameMode::BeginPlay()
     Super::BeginPlay();
 
     // Define la ubicación inicial para spawnear las naves enemigas
-    FVector ubicacionInicialNaves = FVector(1000.0f, -1600.0f, 200.0f);
+    FVector ubicacionInicialNaves = FVector(1000.0f, -1300.0f, 200.0f);
     FRotator rotacionNave = FRotator(0.0f, 180.0f, 0.0f);
 
     // Obtiene el mundo del juego
     UWorld* const World = GetWorld();
     if (World != nullptr)
     {
-        // Spawn de Naves Enemigas de tipo Caza
+         //Spawn de Naves Enemigas de tipo Caza
         for (int i = 0; i < 6; i++) {
             // Calcula la ubicación actual para esta nave
             FVector ubicacionActual = FVector(ubicacionInicialNaves.X, ubicacionInicialNaves.Y + 300.0f * (float)i, ubicacionInicialNaves.Z);
@@ -94,16 +94,7 @@ void AGalaga_USFX_LAB02GameMode::BeginPlay()
 			// Agrega la nave enemiga a un contenedor
 			TANavesEnemigasUwU.Add(NaveEnemigaUwUActual);
 		}
-        // Spawn de Naves Enemigas de tipo Titan
-        ubicacionActual.X = ubicacionInicialNaves.X + 650.0f;
-        for (int j = 0; j < 1; j++) {
-			// Calcula la ubicación actual para esta nave
-			ubicacionActual.Y = ubicacionInicialNaves.Y;
-			// Spawnea la nave enemiga de tipo Titan en la ubicación calculada
-			ANaveEnemigaTitan* NaveEnemigaTitanActual = World->SpawnActor<ANaveEnemigaTitan>(ubicacionActual, rotacionNave);
-			// Agrega la nave enemiga a un contenedor
-			TANavesEnemigasTitan.Add(NaveEnemigaTitanActual);
-		}
+
     }
 
 }

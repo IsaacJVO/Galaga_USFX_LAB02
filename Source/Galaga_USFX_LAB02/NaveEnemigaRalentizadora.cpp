@@ -16,5 +16,4 @@ void ANaveEnemigaRalentizadora::Tick(float DeltaTime)
 
 void ANaveEnemigaRalentizadora::Mover(float DeltaTime)
 {
-	Mover(DeltaTime);
 }

@@ -17,6 +17,6 @@ void ANaveEnemigaHacker::Tick(float DeltaTime)
 
 void ANaveEnemigaHacker::Mover(float DeltaTime)
 {
-	Mover(DeltaTime);
+
 }
 

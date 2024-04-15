@@ -12,27 +12,14 @@ class GALAGA_USFX_LAB02_API UAComponenteMovimiento : public UActorComponent
 
 public:	
 	UAComponenteMovimiento();
-	
-	
-	UPROPERTY()
-
-	float limiteInferiorY = 1600.0f;
 
 
 
-protected:
+public:
 	virtual void BeginPlay() override;
 
 public:	
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-public:
-	int DireccionMovimientoHorizontal = 1;
 
-protected:
-	float Radio = 500.0f; 
-	float Angulo = 0.0f; 
-	float Speed = 40.0f; 
-
-		
 };

@@ -41,18 +41,9 @@ void AGalaga_USFX_LAB02Projectile::OnHit(UPrimitiveComponent* HitComp, AActor* O
 	ANaveEnemiga* NaveEnemiga = Cast<ANaveEnemiga>(OtherActor);
 	if (NaveEnemiga)
 	{
-		// Realizar cualquier acción adicional (por ejemplo, puntuación, efectos especiales) aquí si es necesario
 
-		//...
-
-
-
-
-		// Llamar a la función destruir de la nave enemiga
 		NaveEnemiga->Destroy();
 	}
-
-	Destroy(); 
 
 	// Solo añadir impulso y destruir el proyectil si golpea algo físico
 	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComp != nullptr) && OtherComp->IsSimulatingPhysics())

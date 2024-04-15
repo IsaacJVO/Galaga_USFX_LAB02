@@ -3,8 +3,6 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "AComponenteMovimiento.h"
-#include "ProyectilEnemiga.h"
-#include "AComponenteInvisible.h"
 #include "NaveEnemiga.generated.h"
 
 
@@ -18,9 +16,14 @@ class GALAGA_USFX_LAB02_API ANaveEnemiga : public AActor
 
 
 
+
+
+
+
+
+
 public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
-
 
 	UStaticMeshComponent* mallaNaveEnemiga;
 
@@ -37,9 +40,10 @@ protected:
 	FVector posicion;
 	float tiempoDisparo;
 	float vida;
-
-	//Componente Invisible
-	UAComponenteInvisible* InvisibleComponent;  
+protected:
+	float Radio = 1000.0f;
+	float Angulo = 0.0f;
+	float Speed = 2.0f;
 
 	// Componente de movimiento de las naves
 	UAComponenteMovimiento* MovimientoNavesComponent;
@@ -80,6 +84,9 @@ public:
 protected:
 
 	virtual void BeginPlay() override;
+	void FireProjectile();
+	float FireRate;
+	FTimerHandle FireTimerHandle;
 
 protected:
 

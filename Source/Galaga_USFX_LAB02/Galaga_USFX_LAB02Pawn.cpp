@@ -137,3 +137,22 @@ void AGalaga_USFX_LAB02Pawn::ShotTimerExpired()
 	bCanFire = true;
 }
 
+void AGalaga_USFX_LAB02Pawn::recibirImpacto()
+{
+	ContImpacto++;
+
+	// Verificar si el pawn debe ser destruido
+	CheckDestroy();
+}
+
+void AGalaga_USFX_LAB02Pawn::CheckDestroy()
+{
+	if (ContImpacto >= 3)
+	{
+		FString Message = FString::Printf(TEXT("GAME OVER"));
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, Message);
+		Destroy();
+
+	}
+}
+

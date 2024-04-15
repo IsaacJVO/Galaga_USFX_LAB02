@@ -74,5 +74,21 @@ public:
 	FORCEINLINE class UCameraComponent* GetCameraComponent() const { return CameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+
+protected:
+	int ContImpacto;
+public:
+	void recibirImpacto();
+	void CheckDestroy();
+	int VidasRestantes = 3;
+
+	int GetVidasRestantes() const { return VidasRestantes; }
+
+	// Función para reducir una vida del pawn
+	void ReducirVida()
+	{
+		if (VidasRestantes > 0)
+			VidasRestantes--;
+	}
 };
 
