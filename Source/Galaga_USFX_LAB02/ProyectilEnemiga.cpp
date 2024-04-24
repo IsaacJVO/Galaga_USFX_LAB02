@@ -49,7 +49,7 @@ void AProyectilEnemiga::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, 
 
 		// Mostrar un mensaje informando al jugador sobre la pérdida de vida
 		FString Message = FString::Printf(TEXT("Vidas restantes: %d "), Pawn->GetVidasRestantes());
-		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, Message);
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, Message);
 		//PawnScore += ScorePorEnemigo;
 
 

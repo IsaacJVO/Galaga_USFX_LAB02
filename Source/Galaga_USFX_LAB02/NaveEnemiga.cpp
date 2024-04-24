@@ -2,6 +2,7 @@
 #include "ProyectilEnemiga.h"
 
 
+
 ANaveEnemiga::ANaveEnemiga()
 {
 
@@ -52,6 +53,22 @@ void ANaveEnemiga::Tick(float DeltaTime)
 
 	FVector NewLocation = FVector(GetActorLocation().X, NuevaY, GetActorLocation().Z); 
 	SetActorLocation(NewLocation); 
+}
+
+void ANaveEnemiga::MoverHacia(FVector UbicacionObjetivo)
+{
+}
+
+void ANaveEnemiga::Atacar()
+{
+}
+
+void ANaveEnemiga::RecibirDanio(float CantidadDanio)
+{
+}
+
+void ANaveEnemiga::Morir()
+{
 }
 
 

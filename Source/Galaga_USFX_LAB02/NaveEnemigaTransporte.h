@@ -37,6 +37,8 @@ public: //Accesory Methods
 public:
 	ANaveEnemigaTransporte();
 
+	FString tipoTransporte = "Transporte";
+
 public:
 	virtual void Tick(float DeltaTime) override;
 

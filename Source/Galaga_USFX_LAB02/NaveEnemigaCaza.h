@@ -50,8 +50,12 @@ protected:
 public:
 	ANaveEnemigaCaza();
 
+	FString tipoCaza = "Caza";
+
 public:
 	virtual void Tick(float DeltaTime) override;
 	virtual void Mover(float DeltaTime);
+
+
 
 };

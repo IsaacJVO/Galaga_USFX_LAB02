@@ -122,9 +122,9 @@ void AGalaga_USFX_LAB02Pawn::FireShot(FVector FireDirection)
 			World->GetTimerManager().SetTimer(TimerHandle_ShotTimerExpired, this, &AGalaga_USFX_LAB02Pawn::ShotTimerExpired, FireRate);
 
 			// try and play the sound if specified
-			if (FireSound != nullptr)
+			if (FireSound != nullptr) //
 			{
-				UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
+				UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation()); //
 			}
 
 			bCanFire = false;
@@ -145,13 +145,16 @@ void AGalaga_USFX_LAB02Pawn::recibirImpacto()
 	CheckDestroy();
 }
 
-void AGalaga_USFX_LAB02Pawn::CheckDestroy()
+void AGalaga_USFX_LAB02Pawn::CheckDestroy()  //
 {
-	if (ContImpacto >= 3)
+	if (ContImpacto == 3)
 	{
-		FString Message = FString::Printf(TEXT("GAME OVER"));
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, Message);
+
 		Destroy();
+
+		FString Message = FString::Printf(TEXT("GAME OVER"));
+		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, Message);
+	
 
 	}
 }

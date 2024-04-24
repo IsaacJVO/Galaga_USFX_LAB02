@@ -8,6 +8,8 @@
 #include "NaveEnemigaUwU.h"
 #include "NaveEnemigaRalentizadora.h"
 #include "NaveEnemigaTitan.h"
+#include "NaveEnemigaFactory.h"
+
 
 // Constructor del GameMode
 AGalaga_USFX_LAB02GameMode::AGalaga_USFX_LAB02GameMode()

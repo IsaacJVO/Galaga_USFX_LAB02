@@ -18,6 +18,8 @@ class GALAGA_USFX_LAB02_API ANaveEnemigaUwU : public ANaveEnemiga
 
 public:
 	ANaveEnemigaUwU();
+
+	FString tipoUwU = "UwU";
 public:
 	virtual void Tick(float DeltaTime) override;
 public:

@@ -21,6 +21,8 @@ class GALAGA_USFX_LAB02_API ANaveEnemigaRalentizadora : public ANaveEnemiga
 	
 public:
 	ANaveEnemigaRalentizadora();
+
+	FString tipoRalentizadora = "Ralentizadora";
 public:
 	virtual void Tick(float DeltaTime) override;
 public:

@@ -14,6 +14,8 @@ class GALAGA_USFX_LAB02_API ANaveEnemigaHacker : public ANaveEnemiga
 	
 public:
 	ANaveEnemigaHacker();
+
+	FString tipoHacker = "Hacker";
 public:
 	virtual void Tick(float DeltaTime) override;
 
