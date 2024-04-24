@@ -3,11 +3,12 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "AComponenteMovimiento.h"
+#include "AComponenteInvisible.h"
 #include "NaveEnemiga.generated.h"
 
 
 
-UCLASS()
+UCLASS(ABSTRACT)
 class GALAGA_USFX_LAB02_API ANaveEnemiga : public AActor
 {
 	GENERATED_BODY()
@@ -71,6 +72,11 @@ public:
 
 
 	ANaveEnemiga();
+
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Componentes")
+
+	UAComponenteInvisible* AComponenteInvisible;
 
 protected:
 

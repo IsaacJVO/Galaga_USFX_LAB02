@@ -22,5 +22,12 @@ protected:
 public:	
 
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	void Invisibilidad(float Duracion);
 
+private:
+	// Function to make the owning actor visible again
+	void HacerVisible();
+
+	// Timer handle for making the actor visible again
+	FTimerHandle TimerHandle_VisibleTimerExpired;
 };

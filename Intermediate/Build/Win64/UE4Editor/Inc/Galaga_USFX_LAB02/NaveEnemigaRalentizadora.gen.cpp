@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaRalentizadora() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANaveEnemigaRalentizadora, 2221092361);
+	IMPLEMENT_CLASS(ANaveEnemigaRalentizadora, 3726131289);
 	template<> GALAGA_USFX_LAB02_API UClass* StaticClass<ANaveEnemigaRalentizadora>()
 	{
 		return ANaveEnemigaRalentizadora::StaticClass();

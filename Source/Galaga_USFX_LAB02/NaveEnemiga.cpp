@@ -13,6 +13,11 @@ ANaveEnemiga::ANaveEnemiga()
 	RootComponent = mallaNaveEnemiga;
 
 	MovimientoNavesComponent = CreateDefaultSubobject<UAComponenteMovimiento>(TEXT("MovimientoNavesComponente"));
+
+	AComponenteInvisible = CreateDefaultSubobject<UAComponenteInvisible>(TEXT("ComponenteInvisible"));
+
+
+
 	FireRate = 1.0f;
 }
 
