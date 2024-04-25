@@ -31,14 +31,13 @@ void AGalaga_USFX_LAB02GameMode::BeginPlay()
     UWorld* const World = GetWorld();
     if (World != nullptr)
     {
-         //Spawn de Naves Enemigas de tipo Caza
         for (int i = 0; i < 6; i++) {
-            // Calcula la ubicación actual para esta nave
             FVector ubicacionActual = FVector(ubicacionInicialNaves.X, ubicacionInicialNaves.Y + 300.0f * (float)i, ubicacionInicialNaves.Z);
-            // Spawnea la nave enemiga de tipo Caza en la ubicación calculada
-            ANaveEnemigaCaza* NaveEnemigaCazaActual = World->SpawnActor<ANaveEnemigaCaza>(ubicacionActual, rotacionNave);
-            // Agrega la nave enemiga a un contenedor
-            TANavesEnemigasCaza.Add(NaveEnemigaCazaActual);
+
+            ANaveEnemiga* NaveEnemigaCazaActual = ANaveEnemigaFactory::FabricaNaves("Caza", World, ubicacionActual, rotacionNave);
+
+            TANavesEnemigas.Add(NaveEnemigaCazaActual);
+
         }
 
         // Resetear ubicación para Naves Enemigas de tipo Transporte
@@ -46,55 +45,37 @@ void AGalaga_USFX_LAB02GameMode::BeginPlay()
 
         // Spawn de Naves Enemigas de tipo Transporte
         for (int j = 0; j < 6; j++) {
-            // Calcula la ubicación actual para esta nave
             ubicacionActual.Y = ubicacionInicialNaves.Y + 300.0f * (float)j;
-            // Spawnea la nave enemiga de tipo Transporte en la ubicación calculada
-            ANaveEnemigaTransporte* NaveEnemigaTransporteActual = World->SpawnActor<ANaveEnemigaTransporte>(ubicacionActual, rotacionNave);
-            // Agrega la nave enemiga a un contenedor
-            TANavesEnemigasTransporte.Add(NaveEnemigaTransporteActual);
+            ANaveEnemiga* NaveEnemigaTransporteActual = ANaveEnemigaFactory::FabricaNaves("Transporte", World, ubicacionActual, rotacionNave);
+            TANavesEnemigas.Add(NaveEnemigaTransporteActual);  
         }
 
-        // Spawn de Naves Enemigas de tipo Espia
         ubicacionActual.X = ubicacionInicialNaves.X - 600.0f;
         for (int j = 0; j < 6; j++) {
-            // Calcula la ubicación actual para esta nave
             ubicacionActual.Y = ubicacionInicialNaves.Y + 300.0f * j;
-            // Spawnea la nave enemiga de tipo Espia en la ubicación calculada
-            ANaveEnemigaEspia* NaveEnemigaEspiaActual = World->SpawnActor<ANaveEnemigaEspia>(ubicacionActual, rotacionNave);
-            // Agrega la nave enemiga a un contenedor
-            TANavesEnemigasEspia.Add(NaveEnemigaEspiaActual);
+            ANaveEnemiga* NaveEnemigaEspiaActual = ANaveEnemigaFactory::FabricaNaves("Espia", World, ubicacionActual, rotacionNave);
+            TANavesEnemigas.Add(NaveEnemigaEspiaActual);
         }
 
-        // Spawn de Naves Enemigas de tipo Hacker
         ubicacionActual.X = ubicacionInicialNaves.X - 900.0f;
         for (int j = 0; j < 6; j++) {
-            // Calcula la ubicación actual para esta nave
             ubicacionActual.Y = ubicacionInicialNaves.Y + 300.0f * j;
-            // Spawnea la nave enemiga de tipo Hacker en la ubicación calculada
-            ANaveEnemigaHacker* NaveEnemigaHackerActual = World->SpawnActor<ANaveEnemigaHacker>(ubicacionActual, rotacionNave);
-            // Agrega la nave enemiga a un contenedor
-            TANavesEnemigasHacker.Add(NaveEnemigaHackerActual);
+            ANaveEnemiga* NaveEnemigaHackerActual = ANaveEnemigaFactory::FabricaNaves("Hacker", World, ubicacionActual, rotacionNave);
+            TANavesEnemigas.Add(NaveEnemigaHackerActual);
         }
 
-        // Spawn de Naves Enemigas de tipo Ralentizadora
         ubicacionActual.X = ubicacionInicialNaves.X - 1200.0f;
         for (int j = 0; j < 6; j++) {
-            // Calcula la ubicación actual para esta nave
             ubicacionActual.Y = ubicacionInicialNaves.Y + 300.0f * j;
-            // Spawnea la nave enemiga de tipo Ralentizadora en la ubicación calculada
-            ANaveEnemigaRalentizadora* NaveEnemigaRalentizadoraActual = World->SpawnActor<ANaveEnemigaRalentizadora>(ubicacionActual, rotacionNave);
-            // Agrega la nave enemiga a un contenedor
-            TANavesEnemigasRalentizadora.Add(NaveEnemigaRalentizadoraActual);
+            ANaveEnemiga* NaveEnemigaRalentizadoraActual = ANaveEnemigaFactory::FabricaNaves("Ralentizadora", World, ubicacionActual, rotacionNave);
+            TANavesEnemigas.Add(NaveEnemigaRalentizadoraActual); 
         }
-        // Spawn de Naves Enemigas de tipo UwU
+
         ubicacionActual.X = ubicacionInicialNaves.X - 1500.0f;
         for (int j = 0; j < 6; j++) {
-			// Calcula la ubicación actual para esta nave
 			ubicacionActual.Y = ubicacionInicialNaves.Y + 300.0f * j;
-			// Spawnea la nave enemiga de tipo UwU en la ubicación calculada
-			ANaveEnemigaUwU* NaveEnemigaUwUActual = World->SpawnActor<ANaveEnemigaUwU>(ubicacionActual, rotacionNave);
-			// Agrega la nave enemiga a un contenedor
-			TANavesEnemigasUwU.Add(NaveEnemigaUwUActual);
+            ANaveEnemiga* NaveEnemigaUwUActual = ANaveEnemigaFactory::FabricaNaves("UwU", World, ubicacionActual, rotacionNave);
+			TANavesEnemigas.Add(NaveEnemigaUwUActual);
 		}
 
     }

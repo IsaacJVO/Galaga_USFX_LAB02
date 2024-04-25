@@ -36,13 +36,7 @@ protected:
 
 public:
 	TArray<ANaveEnemiga*> TANavesEnemigas;
-	TArray<ANaveEnemigaCaza*> TANavesEnemigasCaza;
-	TArray<ANaveEnemigaTransporte*> TANavesEnemigasTransporte;
-	TArray<ANaveEnemigaEspia*> TANavesEnemigasEspia;
-	TArray<ANaveEnemigaHacker*> TANavesEnemigasHacker;
-	TArray<ANaveEnemigaUwU*> TANavesEnemigasUwU;
-	TArray<ANaveEnemigaRalentizadora*> TANavesEnemigasRalentizadora;
-	TArray<ANaveEnemigaTitan*> TANavesEnemigasTitan;
+
 
 
 };

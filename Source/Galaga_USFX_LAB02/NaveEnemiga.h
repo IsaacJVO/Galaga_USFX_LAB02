@@ -8,7 +8,7 @@
 
 
 
-UCLASS(ABSTRACT)
+UCLASS(ABSTRACT) // Para que herede con el polimorfismo, metodos
 class GALAGA_USFX_LAB02_API ANaveEnemiga : public AActor
 {
 	GENERATED_BODY()

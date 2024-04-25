@@ -22,7 +22,7 @@ public:
 	// Sets default values for this actor's properties
 	ANaveEnemigaFactory();
 
-	UFUNCTION(BlueprintCallable, Category = "CrearNaves")
+
 	static ANaveEnemiga* FabricaNaves(FString FabricarNaves, UWorld* World, FVector SpawnLocation, FRotator SpawnRotation);
 
 

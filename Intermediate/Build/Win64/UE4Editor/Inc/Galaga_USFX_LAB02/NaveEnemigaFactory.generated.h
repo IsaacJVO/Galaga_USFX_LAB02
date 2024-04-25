@@ -8,26 +8,14 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class UWorld;
-struct FVector;
-struct FRotator;
-class ANaveEnemiga;
 #ifdef GALAGA_USFX_LAB02_NaveEnemigaFactory_generated_h
 #error "NaveEnemigaFactory.generated.h already included, missing '#pragma once' in NaveEnemigaFactory.h"
 #endif
 #define GALAGA_USFX_LAB02_NaveEnemigaFactory_generated_h
 
 #define Galaga_USFX_LAB02_Source_Galaga_USFX_LAB02_NaveEnemigaFactory_h_13_SPARSE_DATA
-#define Galaga_USFX_LAB02_Source_Galaga_USFX_LAB02_NaveEnemigaFactory_h_13_RPC_WRAPPERS \
- \
-	DECLARE_FUNCTION(execFabricaNaves);
-
-
-#define Galaga_USFX_LAB02_Source_Galaga_USFX_LAB02_NaveEnemigaFactory_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
- \
-	DECLARE_FUNCTION(execFabricaNaves);
-
-
+#define Galaga_USFX_LAB02_Source_Galaga_USFX_LAB02_NaveEnemigaFactory_h_13_RPC_WRAPPERS
+#define Galaga_USFX_LAB02_Source_Galaga_USFX_LAB02_NaveEnemigaFactory_h_13_RPC_WRAPPERS_NO_PURE_DECLS
 #define Galaga_USFX_LAB02_Source_Galaga_USFX_LAB02_NaveEnemigaFactory_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesANaveEnemigaFactory(); \

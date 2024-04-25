@@ -25,23 +25,23 @@ ANaveEnemiga* ANaveEnemigaFactory::FabricaNaves(FString FabricarNaves, UWorld* W
 		return NaveFabricada;
 
 	}
-	else if (FabricarNaves == "Transporte") {
+	if (FabricarNaves == "Transporte") {
 		ANaveEnemigaTransporte* NaveFabricada = World->SpawnActor<ANaveEnemigaTransporte>(SpawnLocation, SpawnRotation);
 		return NaveFabricada;
 	}
-	else if (FabricarNaves == "Ralentizadora") {
+	if (FabricarNaves == "Ralentizadora") {
 		ANaveEnemigaRalentizadora* NaveFabricada = World->SpawnActor<ANaveEnemigaRalentizadora>(SpawnLocation, SpawnRotation); 
 		return NaveFabricada;
 	}
-	else if (FabricarNaves == "Espia") {
+	if (FabricarNaves == "Espia") {
 		ANaveEnemigaEspia* NaveFabricada = World->SpawnActor<ANaveEnemigaEspia>(SpawnLocation, SpawnRotation);
 		return NaveFabricada;
 	}
-	else if (FabricarNaves == "UwU") {
+	if (FabricarNaves == "UwU") {
 		ANaveEnemigaUwU* NaveFabricada = World->SpawnActor<ANaveEnemigaUwU>(SpawnLocation, SpawnRotation); 
 		return NaveFabricada;
 	}
-	else if (FabricarNaves == "Hacker") {
+	if (FabricarNaves == "Hacker") {
 		ANaveEnemigaHacker* NaveFabricada = World->SpawnActor<ANaveEnemigaHacker>(SpawnLocation, SpawnRotation);
 		return NaveFabricada;
 	}
